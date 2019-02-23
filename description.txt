@@ -1,0 +1,21 @@
+
+Description:
+  Create a single page application utilizing React/Redux or vanilla JS.
+
+Requirements:
+  1. Create a UI based on the mockup given. Accuracy counts.
+
+  2. Display each item found in the "store_items.json" file. Each item should show the name, image, price and quantity remaining.
+
+  3. Users should have the ability to remove an item from the display.
+
+  4. Users should be able to sort items by highest/lowest price.
+
+* Helpful Hints:
+	- Directory structure and component architecture count (build with extensibility in mind)
+	- UI and UX count!
+	- Bonus points for proper display at different screen sizes
+
+Good luck!:
+  Once complete, please send a github link or a zip of your project files. 
+
