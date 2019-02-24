@@ -4,3 +4,8 @@
     font-size: 2rem;
     font-weight: bolder;
 }
+
+.divider {
+    padding: 0.1rem;
+    background: #34c896;
+}

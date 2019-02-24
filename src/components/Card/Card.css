@@ -1,0 +1,13 @@
+.card {
+    width: 14rem;
+    margin: 0.5rem 1rem 0.5rem 0;
+    height: 18rem;
+    border-radius: 0;
+    border: 0.1rem solid #34c896;
+}
+
+.card-img {
+    align-self: center;
+    height: 8rem;
+    object-fit: contain;
+}

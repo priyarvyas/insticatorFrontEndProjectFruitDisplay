@@ -1,10 +1,23 @@
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
-import rootReducer from './reducers/rootReducer';
-export default function configureStore(initialState = {}) {
-    return createStore(
-        rootReducer,
-        initialState,
-        applyMiddleware(thunk)
-    );
+import { rootReducer } from './reducers/rootReducer';
+import { INITIAL_STATE } from './reducers/fruitReducer';
+
+const enhancerArgs = [
+    applyMiddleware(
+        thunk
+    )
+];
+
+const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
+if (devTools) {
+    enhancerArgs.push(devTools);
 }
+
+let enhancers = compose(...enhancerArgs);
+
+export const store = createStore(
+    rootReducer,
+    INITIAL_STATE,
+    enhancers
+);

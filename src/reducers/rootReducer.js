@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import simpleReducer from './sampleReducer';
-export default combineReducers({
-    simpleReducer
+import { fruitListReducer } from './fruitReducer';
+export const rootReducer = combineReducers({
+    fruitList: fruitListReducer
 });
