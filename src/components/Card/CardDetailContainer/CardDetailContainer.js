@@ -10,7 +10,6 @@ export default class CardDetailConatiner extends Component {
     }
 
     removeItem(fruit) {
-        console.log(fruit);
         if (fruit.quantityRemaining > 0) {
             updateItemCount(fruit);
         }

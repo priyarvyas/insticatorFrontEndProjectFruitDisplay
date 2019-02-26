@@ -10,11 +10,14 @@ export function fruitListReducer(state = INITIAL_STATE, action) {
             ]
         case REMOVE_ITEM:
             const fruit = action.fruit
-            let selectedFruit = state.find((x) => x.itemName === fruit.itemName)
-            if (selectedFruit.quantityRemaining) {
-                selectedFruit.quantityRemaining = selectedFruit.quantityRemaining - 1;
+            let index = state.findIndex((x) => x.itemName === fruit.itemName)
+            if (state[index] && state[index].quantityRemaining > 0) {
+                state[index].quantityRemaining = state[index].quantityRemaining - 1;
             }
-            return state
+            return [
+                ...state
+            ]
+
         default:
             return state
     }
