@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Card.css';
-import DetailConatiner from './DetailContainer/DetailContainer';
+import CardDetailContainer from './CardDetailContainer/CardDetailContainer';
 
 export default class Card extends Component {
 
@@ -8,7 +8,7 @@ export default class Card extends Component {
         return (
             <div className="card">
                 <img src={this.props.fruit.imgSrc} className="card-img" alt="..." />
-                <DetailConatiner fruit={this.props.fruit} />
+                <CardDetailContainer fruit={this.props.fruit} />
             </div>
         );
     }

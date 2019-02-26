@@ -1,5 +1,5 @@
 import myData from './store_items.json';
-import { storeFruitList } from '../actions/fruitActions';
+import { storeFruitList, removeItemAction } from '../actions/fruitActions';
 import { store } from '../store';
 import { HEIGHEST, LOWEST } from '../components/Navbar/Navbar.js';
 import { sortPriceByHeighest } from '../utilities.js';
@@ -27,15 +27,8 @@ export function sortFruitList(sortType) {
 
 export function updateItemCount(selectedItem) {
     if (selectedItem) {
-        const fruitList = store.getState().fruitList || [];
-        if (fruitList) {
-            fruitList.map((fruit) => {
-                if (fruit.itemName === selectedItem.itemName) {
-                    fruit.quantityRemaining = selectedItem.quantityRemaining;
-                }
-                return fruit;
-            });
-            store.dispatch(storeFruitList(fruitList));
+        if (selectedItem.quantityRemaining > 0) {
+            store.dispatch(removeItemAction(selectedItem));
         }
     }
 }

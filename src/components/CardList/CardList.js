@@ -5,13 +5,6 @@ import { loadFruitsList } from '../../services/fruitService';
 
 class CardList extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            selectedFruit: {}
-        }
-    }
-
     componentWillMount() {
         loadFruitsList();
     }
