@@ -11,7 +11,7 @@ export const Button = ({ disabled, handleOnClick, title }) => {
         </button>
     );
 }
-
+// demonstrating the usage of prop types.
 Button.propTypes = {
     title: propTypes.string,
     disabled: propTypes.bool,
