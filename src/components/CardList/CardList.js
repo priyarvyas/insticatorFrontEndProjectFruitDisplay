@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
 import Card from '../Card/Card'
 import { connect } from 'react-redux';
-import { loadFruitsList } from '../../services/fruitService';
+import { fetchFruitList } from '../../services/fruitService';
+import './CardList.css';
 
 class CardList extends Component {
 
     componentWillMount() {
-        loadFruitsList();
+        fetchFruitList();
     }
 
     render() {
         return (
-            <div className="d-flex flex-wrap justify-content-left ml-5">
+            <div className="card-list d-flex flex-wrap">
                 {this.props.fruitList.length > 0 && this.props.fruitList.map((fruit, index) => {
                     return (
                         <Card fruit={fruit} key={index} />

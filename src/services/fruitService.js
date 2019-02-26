@@ -1,27 +1,16 @@
-import myData from './store_items.json';
+import myData from '../store_items.json';
 import { storeFruitList, removeItemAction } from '../actions/fruitActions';
 import { store } from '../store';
-import { HEIGHEST, LOWEST } from '../components/Navbar/Navbar.js';
-import { sortPriceByHeighest } from '../utilities.js';
 
-export function loadFruitsList() {
+export function fetchFruitList() {
     store.dispatch(storeFruitList(myData));
 }
 
-export function sortFruitList(sortType) {
-    let fruitList = store.getState().fruitList || [];
-    switch (parseInt(sortType)) {
-        case HEIGHEST:
-            fruitList.sort(sortPriceByHeighest.bind(null, HEIGHEST));
-            break;
-        case LOWEST:
-            fruitList.sort(sortPriceByHeighest.bind(null, LOWEST));
-            break;
-        default:
-            fruitList = myData;
-            break;
-    }
+export function getFruitList() {
+    return store.getState().fruitList;
+}
 
+export function saveFruitList(fruitList) {
     store.dispatch(storeFruitList(fruitList));
 }
 

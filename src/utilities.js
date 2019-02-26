@@ -1,6 +1,6 @@
 import { HEIGHEST, LOWEST } from "./components/Navbar/Navbar";
 
-export function sortPriceByHeighest(sortType, a, b) {
+export function sortListByPrice(sortType, a, b) {
     const priceA = a.price;
     const priceB = b.price;
 

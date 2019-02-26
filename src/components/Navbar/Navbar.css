@@ -9,3 +9,14 @@
     padding: 0.1rem;
     background: #34c896;
 }
+
+/** Responsiveness **/
+
+@media only screen and (max-width: 600px) {
+    .nav-item {
+        margin: 0 !important;
+    }
+    .nav-dropdown {
+        margin: 0 !important;
+    }
+}
